@@ -24,7 +24,7 @@ class AppsController < ApplicationController
       owner_login: app.repository_owner,
       auth_token: current_user.auth_token
     )
-    repository.create_branch('add_hive_documentation', "#{documentation_directory}/description", 'Boilerplate')
+    repository.create_branch('add_hive_documentation', "#{app.documentation_directory}/description", "#{params[:description]}\n")
     redirect_to action: :index
   end
 
